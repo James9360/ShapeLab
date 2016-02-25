@@ -1,4 +1,8 @@
 Circle,3
 Square,5
 Rectangle,2,3
+<<<<<<< HEAD
 RightTriangle,6,2
+=======
+RightTriangle,6,2
+>>>>>>> branch 'master' of https://github.com/James9360/ShapeLab.git

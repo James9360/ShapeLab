@@ -16,7 +16,6 @@ public class RightTriangle implements Shape
 		ph+= v2*v2;
 		return v1 + v2 + Math.sqrt(ph);
 	}
-	
 	public String toString(){
 		return "The Right Triangle has an area of " + this.getArea() + " and a perimeter of " + this.getPerimeter();
 	}

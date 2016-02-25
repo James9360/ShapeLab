@@ -14,7 +14,6 @@ public class Rectangle implements Shape
 	public double getPerimeter(){
 		return v1+v1+v2+v2;
 	}
-	
 	public String toString(){
 		return "The Rectangle has an area of " + this.getArea() + " and a perimeter of " + this.getPerimeter();
 	}

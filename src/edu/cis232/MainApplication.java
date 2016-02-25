@@ -8,6 +8,8 @@ import edu.cis232.shape.*;
 
 public class MainApplication 
 {
+	private static Shape r;
+
 	public static void main(String[] args) 
 	{
 		ArrayList<Shape> shapes = readFile();
@@ -18,27 +20,78 @@ public class MainApplication
 	{
 		for (Shape s : shapes)
 		{
-			if (s instanceof Circle)
-			{
-				System.out.println(s.toString());
-			}
-			
-			else if (s instanceof Square)
-			{
-				System.out.println(s.toString());
-			}
-			
-			else if (s instanceof Rectangle)
-			{
-				System.out.println(s.toString());
-			}
-			
-			else if (s instanceof RightTriangle)
-			{
-				System.out.println(s.toString());
-			}
+			System.out.println (s);
 		}
 	}
+	
+	/*
+	public static void calculateShapes (ArrayList<Shape> shapes)
+	{
+		for (Shape t : shapes)
+		{
+			StringTokenizer strToken = new StringTokenizer(t, ",", false);
+			if (t.contains("circle"))
+			{
+				double radius;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("circle"))
+					{
+						radius = Double.parseDouble(strToken.nextToken().trim());
+						Circle c = new Circle (radius);
+						System.out.printf("The Circle has an area of %.2f and a perimeter of %.2f", c.getArea(), c.getPerimeter());
+					}
+								
+				}
+			}
+			
+			else if (t.contains("square"))
+			{
+				double length;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("square"))
+					{
+						length = Double.parseDouble(strToken.nextToken().trim());
+						Square s = new Square (length);
+						System.out.printf("\nThe Square has an area of %.2f and a perimeter of %.2f", s.getArea(), s.getPerimeter());
+					}
+								
+				}
+			}
+			
+			else if (t.contains("rectangle"))
+			{
+				double length, width;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("rectangle"))
+					{
+						length = Double.parseDouble(strToken.nextToken().trim());
+						width = Double.parseDouble(strToken.nextToken().trim());
+						Rectangle r = new Rectangle (length, width);
+						System.out.printf("\nThe Rectangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+					}
+								
+				}
+			}
+			else if (t.contains("righttriangle"))
+			{
+				double base, height;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("righttriangle"))
+					{
+						base = Double.parseDouble(strToken.nextToken().trim());
+						height = Double.parseDouble(strToken.nextToken().trim());
+						RightTriangle r = new RightTriangle (base, height);
+						System.out.printf("\nThe Right Triangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+					}
+								
+				}
+			}
+		}		
+	}*/
 	
 	public static ArrayList<Shape> readFile()
 	{
@@ -118,7 +171,9 @@ public class MainApplication
 						}
 									
 					}
-				}						
+				}
+				
+				
 				
 			}
 		} catch (FileNotFoundException e) 
