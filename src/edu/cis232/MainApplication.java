@@ -11,32 +11,75 @@ public class MainApplication
 	public static void main(String[] args) 
 	{
 		ArrayList<String> shapes = readFile();
+		calculateShapes (shapes);
+	}
+	
+	public static void calculateShapes (ArrayList<String> shapes)
+	{
 		for (String t : shapes)
 		{
 			StringTokenizer strToken = new StringTokenizer(t, ",", false);
-			if (t.contains("Circle"))
+			if (t.contains("circle"))
 			{
-				double temp;
+				double radius;
 				while (strToken.hasMoreTokens())
 				{
-					//temp = Double.parseDouble(strToken.nextToken());
-					System.out.println(strToken.nextToken());
+					if (strToken.nextToken().equals("circle"))
+					{
+						radius = Double.parseDouble(strToken.nextToken().trim());
+						Circle c = new Circle (radius);
+						System.out.printf("The Circle has an area of %.2f and a perimeter of %.2f", c.getArea(), c.getPerimeter());
+					}
+								
 				}
-				System.out.println(t);
 			}
-			else if (t.contains("Square"))
+			
+			else if (t.contains("square"))
 			{
-				System.out.println(t);
+				double length;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("square"))
+					{
+						length = Double.parseDouble(strToken.nextToken().trim());
+						Square s = new Square (length);
+						System.out.printf("\nThe Square has an area of %.2f and a perimeter of %.2f", s.getArea(), s.getPerimeter());
+					}
+								
+				}
 			}
-			else if (t.contains("Rectangle"))
+			
+			else if (t.contains("rectangle"))
 			{
-				System.out.println(t);
+				double length, width;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("rectangle"))
+					{
+						length = Double.parseDouble(strToken.nextToken().trim());
+						width = Double.parseDouble(strToken.nextToken().trim());
+						Rectangle r = new Rectangle (length, width);
+						System.out.printf("\nThe Rectangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+					}
+								
+				}
 			}
-			else if (t.contains("RightTriangle"))
+			else if (t.contains("righttriangle"))
 			{
-				System.out.println(t);
+				double base, height;
+				while (strToken.hasMoreTokens())
+				{
+					if (strToken.nextToken().equals("righttriangle"))
+					{
+						base = Double.parseDouble(strToken.nextToken().trim());
+						height = Double.parseDouble(strToken.nextToken().trim());
+						RightTriangle r = new RightTriangle (base, height);
+						System.out.printf("\nThe Right Triangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+					}
+								
+				}
 			}
-		}
+		}		
 	}
 	
 	public static ArrayList<String> readFile()
@@ -48,7 +91,7 @@ public class MainApplication
 			Scanner scan = new Scanner (file);
 			while (scan.hasNext())
 			{
-				shapes.add(scan.nextLine());
+				shapes.add(scan.nextLine().toLowerCase());
 			}
 		} catch (FileNotFoundException e) 
 		{
