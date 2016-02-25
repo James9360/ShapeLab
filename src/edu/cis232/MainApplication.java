@@ -28,7 +28,7 @@ public class MainApplication
 					{
 						radius = Double.parseDouble(strToken.nextToken().trim());
 						Circle c = new Circle (radius);
-						System.out.printf("The Circle has an area of %.2f and a perimeter of %.2f", c.getArea(), c.getPerimeter());
+						System.out.println(c.ToString());
 					}
 								
 				}
@@ -43,7 +43,7 @@ public class MainApplication
 					{
 						length = Double.parseDouble(strToken.nextToken().trim());
 						Square s = new Square (length);
-						System.out.printf("\nThe Square has an area of %.2f and a perimeter of %.2f", s.getArea(), s.getPerimeter());
+						System.out.println(s.ToString());
 					}
 								
 				}
@@ -59,7 +59,7 @@ public class MainApplication
 						length = Double.parseDouble(strToken.nextToken().trim());
 						width = Double.parseDouble(strToken.nextToken().trim());
 						Rectangle r = new Rectangle (length, width);
-						System.out.printf("\nThe Rectangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+						System.out.println(r.ToString());
 					}
 								
 				}
@@ -74,7 +74,7 @@ public class MainApplication
 						base = Double.parseDouble(strToken.nextToken().trim());
 						height = Double.parseDouble(strToken.nextToken().trim());
 						RightTriangle r = new RightTriangle (base, height);
-						System.out.printf("\nThe Right Triangle has an area of %.2f and a perimeter of %.2f", r.getArea(), r.getPerimeter());
+						System.out.println(r.ToString());
 					}
 								
 				}

@@ -1,6 +1,6 @@
 package edu.cis232.shape;
 
-public class Square 
+public class Square implements Shape
 {
 	double v1 = 0;
 	public Square(double value1){
@@ -11,5 +11,8 @@ public class Square
 	}
 	public double getPerimeter(){
 		return v1*4;
+	}
+	public String ToString(){
+		return "The Square has an area of " + this.getArea() + " and a perimeter of " + this.getPerimeter();
 	}
 }
