@@ -13,4 +13,8 @@ public class Circle implements Shape
 	public double getPerimeter(){
 		return 2 * PI * v1;
 	}
+	
+	public String toString(){
+		return "The Circle has an area of " + this.getArea() + " and a perimeter of " + this.getPerimeter();
+	}
 }

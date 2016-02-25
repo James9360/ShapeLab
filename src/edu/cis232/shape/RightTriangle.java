@@ -1,6 +1,6 @@
 package edu.cis232.shape;
 
-public class RightTriangle 
+public class RightTriangle implements Shape
 {
 	double v1 = 0;
 	double v2 = 0;
@@ -15,5 +15,9 @@ public class RightTriangle
 		double ph = v1*v1;
 		ph+= v2*v2;
 		return v1 + v2 + Math.sqrt(ph);
+	}
+	
+	public String toString(){
+		return "The Right Triangle has an area of " + this.getArea() + " and a perimeter of " + this.getPerimeter();
 	}
 }
